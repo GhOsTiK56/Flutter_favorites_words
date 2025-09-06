@@ -7,5 +7,7 @@
 
 ## Скриншоты:
 
-![Главный экран](screenshots/main_skreen.jpg)
-![Экран избранного](screenshots/favorites_skreen.jpg)
+<p float="left">
+  <img src="lib/screenshots/main_skreen.jpg" width="200" />
+  <img src="lib/screenshots/favorites_skreen.jpg" width="200" />
+</p>
