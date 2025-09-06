@@ -1,0 +1,33 @@
+# Помечаем сгенерированные файлы как "vendored", чтобы не учитывались в языке
+
+# Linux
+linux/**/*.cc linguist-vendored
+linux/**/*.h linguist-vendored
+linux/**/*.cxx linguist-vendored
+linux/**/*.hpp linguist-vendored
+linux/**/*.cmake linguist-vendored
+
+# Windows
+windows/**/*.cc linguist-vendored
+windows/**/*.h linguist-vendored
+windows/**/*.cxx linguist-vendored
+windows/**/*.hpp linguist-vendored
+windows/**/*.cmake linguist-vendored
+
+# macOS
+macos/**/*.swift linguist-vendored
+macos/**/*.h linguist-vendored
+macos/**/*.m linguist-vendored
+macos/**/*.mm linguist-vendored
+macos/**/*.plist linguist-vendored
+
+# Android (Java/Kotlin автоматически учитывается, но можно тоже пометить)
+android/**/*.gradle linguist-vendored
+android/**/*.iml linguist-vendored
+
+# iOS (Xcode файлы)
+ios/**/*.pbxproj linguist-vendored
+ios/**/*.xcworkspace linguist-vendored
+ios/**/*.plist linguist-vendored
+ios/**/*.h linguist-vendored
+ios/**/*.m linguist-vendored
