@@ -34,7 +34,7 @@ class MyAppState extends ChangeNotifier {
 
   var favorites = <WordPair>[];
 
-  void toggleFavorite(){
+  void toggleFavorite() {
     if (favorites.contains(current)) {
       favorites.remove(current);
     } else {
@@ -52,21 +52,44 @@ class MyHomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
 
+    IconData icon;
+    if (appState.favorites.contains(pair)) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BigCard(pair: pair),
-            SizedBox(height: 20,),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(170, 60),
-              ),
-              onPressed: () {
-                appState.getNext();
-              },
-              child: Text('Next'),
+            SizedBox(height: 20),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(170, 60),
+                  ),
+                  onPressed: () {
+                    appState.getNext();
+                  },
+                  child: const Text('Next'),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(170, 60),
+                  ),
+                  onPressed: () {
+                    appState.toggleFavorite();
+                  },
+                  icon: Icon(icon),
+                  label: const Text('Like'),
+                ),
+              ],
             ),
           ],
         ),
