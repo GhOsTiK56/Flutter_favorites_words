@@ -1,0 +1,17 @@
+# Указываем основной язык проекта
+*.dart linguist-detectable=true
+*.dart linguist-language=Dart
+
+# Игнорируем сгенерированные файлы
+*.g.dart linguist-generated=true
+*.freezed.dart linguist-generated=true
+
+# Если в проекте есть C/C++ файлы, но они не должны учитываться
+*.c linguist-detectable=false
+*.cpp linguist-detectable=false
+*.cc linguist-detectable=false
+*.h linguist-detectable=false
+
+# Игнорируем CMake-файлы
+CMakeLists.txt linguist-detectable=false
+*.cmake linguist-detectable=false
